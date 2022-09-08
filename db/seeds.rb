@@ -19,7 +19,6 @@ Comment.create(name: "stella" , email: "stl@gmail.com" , message: "hello there")
 Comment.create(name: "maina" , email: "maina@gmail.com" , message: "hello an here")
 
 
-
 # products
 Product.create(
     title: "Dam Bells",
