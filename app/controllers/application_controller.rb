@@ -45,8 +45,8 @@ class ApplicationController < Sinatra::Base
   # PRODUCTS
   # get
   get '/products' do 
-    products = Product.all.order(:name)
-    products.to_json
+    products = Product.all.order(:id)
+    products.to_json(include: :category)
   end 
 
   # post
