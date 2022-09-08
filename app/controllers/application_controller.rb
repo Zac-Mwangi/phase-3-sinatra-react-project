@@ -13,4 +13,12 @@ class ApplicationController < Sinatra::Base
     comments.to_json
   end 
 
+    # delete
+    delete '/comments/:id' do
+      comments = Comment.find(params[:id])
+      comments.destroy 
+      comments.to_json
+    end 
+  
+
 end
