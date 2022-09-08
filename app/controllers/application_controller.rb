@@ -6,21 +6,21 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
-    # COMMENTS
+  # COMMENTS
   # get
   get '/comments' do 
     comments = Comment.all.order(:id)
     comments.to_json
   end 
 
-    # delete
-    delete '/comments/:id' do
-      comments = Comment.find(params[:id])
-      comments.destroy 
-      comments.to_json
-    end 
+  # delete
+  delete '/comments/:id' do
+    comments = Comment.find(params[:id])
+    comments.destroy 
+    comments.to_json
+  end 
 
-      # post
+  # post
   post '/comments' do
     comments = Comment.create(
       name: params[:name],
@@ -41,11 +41,25 @@ class ApplicationController < Sinatra::Base
     comments.to_json
   end
 
-    # PRODUCTS
+
+  # PRODUCTS
   # get
   get '/products' do 
     products = Product.all.order(:name)
     products.to_json
   end 
+
+  # post
+  post '/products' do
+    products = Product.create(
+      title: params[:title],
+      price: params[:price],
+      description: params[:description],
+      category: params[:category],
+      image: params[:image],
+      rating: "2.5"
+    )
+    products.to_json
+  end
 
 end
