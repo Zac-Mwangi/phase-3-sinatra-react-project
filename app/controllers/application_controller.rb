@@ -6,4 +6,11 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+    # COMMENTS
+  # get
+  get '/comments' do 
+    comments = Comment.all.order(:id)
+    comments.to_json
+  end 
+
 end
