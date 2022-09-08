@@ -19,6 +19,15 @@ class ApplicationController < Sinatra::Base
       comments.destroy 
       comments.to_json
     end 
-  
+
+      # post
+  post '/comments' do
+    comments = Comment.create(
+      name: params[:name],
+      email: params[:email],
+      message: params[:message]
+    )
+    comments.to_json
+  end
 
 end
