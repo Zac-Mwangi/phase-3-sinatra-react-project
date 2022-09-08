@@ -41,4 +41,11 @@ class ApplicationController < Sinatra::Base
     comments.to_json
   end
 
+    # PRODUCTS
+  # get
+  get '/products' do 
+    products = Product.all.order(:name)
+    products.to_json
+  end 
+
 end
