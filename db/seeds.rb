@@ -24,7 +24,7 @@ Product.create(
     title: "Dam Bells",
     price: "40000",
     description: "great",
-    category: "sporting",
+    categ: "sporting",
     image: "https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     rating: 2.5
 )

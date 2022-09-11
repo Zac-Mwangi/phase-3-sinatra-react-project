@@ -47,12 +47,13 @@ class ApplicationController < Sinatra::Base
   get '/products' do 
     products = Product.all.order(:id)
     products.to_json(include: :category)
+    # products.to_json
   end 
 
   # post
   post '/products' do
     # category_name = params[:category]
-    category_name = Category.find_by(category: params[:category])
+    category_name = Category.find_by(category: params[:categ])
     category_id = category_name.id
 
     products = Product.create(
@@ -60,7 +61,7 @@ class ApplicationController < Sinatra::Base
       price: params[:price],
       description: params[:description],
       category_id: category_id,
-      category: params[:category],
+      categ: params[:category],
       image: params[:image],
       rating: params[:rating]
     )
