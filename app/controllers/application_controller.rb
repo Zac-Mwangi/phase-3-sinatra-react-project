@@ -6,6 +6,13 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+    # CATEGORIES
+  # get
+  get '/categories' do 
+    category = Category.all.order(:id)
+    category.to_json
+  end 
+
   # COMMENTS
   # get
   get '/comments' do 
