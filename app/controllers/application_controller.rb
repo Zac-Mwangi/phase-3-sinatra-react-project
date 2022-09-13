@@ -61,7 +61,7 @@ class ApplicationController < Sinatra::Base
       price: params[:price],
       description: params[:description],
       category_id: category_id,
-      categ: params[:category],
+      categ: params[:categ],
       image: params[:image],
       rating: params[:rating]
     )
